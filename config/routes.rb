@@ -1,4 +1,16 @@
 TkwaDb::Application.routes.draw do
+
+  #get "users/new"
+
+  #matches path with action in the pages_controller - here, pages -> projects
+  match '/projects',    :to => 'pages#projects'
+  match '/contacts',    :to => 'pages#contacts'
+  match '/patterns',    :to => 'pages#patterns'
+  match '/timesheets',  :to => 'pages#timesheets'
+  match '/signup',      :to => 'users#new'
+
+  root :to => 'pages#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -46,9 +58,7 @@ TkwaDb::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+
 
   # See how all your routes lay out with "rake routes"
 

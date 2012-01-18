@@ -1,0 +1,49 @@
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Good Morning!</h1>
+        <p>Welcome to the ArchiDataBase!</p>
+
+        <p>
+        	<a class="btn large">Sign In &raquo;</a>
+        	<%= link_to "Sign Up", signup_path, :class => "btn primary large" %>
+        </p>
+
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+
+        <div class="span4">
+          <h2>Projects</h2>
+          <p>The Projects database contains detailed information about each of our projects, including address and contact details, time tracking and billing progress, schedule, budgeting, and asset coordination.</p>
+
+          <p><%= link_to "Open Projects >>", projects_path, :class => "btn" %></p>
+
+        </div>
+        <div class="span4">
+          <h2>Contacts</h2>
+           <p>The Contacts database contains information on all the people we know and work with. Search by name, company, title, or address, and easily generate envelopes, transmittal sheets, and pre-addressed letterhead.</p>
+
+          <p><%= link_to "Open Contacts >>", contacts_path, :class => "btn" %></p>
+
+       </div>
+        <div class="span4">
+
+          <h2>Timesheets</h2>
+          <p>The Timesheets database stores time records for each employee and allows close integration with the project tracking database to ensure that we stay on schedule and on budget.</p>
+
+          <p><%= link_to "Open Timesheets >>", timesheets_path, :class => "btn" %></p>
+        </div>
+
+        <div class="span4">
+
+          <h2>Patterns</h2>
+          <p>The Patterns database contains patterns written for each of our projects, with several options for export and display modes, including 11x17 layout, slide layouts, and more.</p>
+
+          <p><%= link_to "Open Patterns >>", patterns_path, :class => "btn" %></p>
+        </div>
+
+      </div> <!-- end row -->
+
+
+

@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TkwaDb</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+
+	<title><%= title %></title>
+	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+	<%= render 'layouts/navbar' %>
+    <div class="container">
+
+		<%= yield %>
+
+    </div> <!-- end container -->
+	<%= render 'layouts/footer' %>
 
 </body>
 </html>
