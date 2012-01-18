@@ -2,9 +2,10 @@ body { padding-top: 60px; }
 
 .topbar .nav-buttons  { float:right; margin-top:5px; color:#fff; width:auto; }
 .topbar .nav-buttons .btn a { color:#000; }
+.topbar .nav-buttons .btn.primary a { color:#fff; }
 .signed-in-link { float:left; width:auto; margin:5px 20px 0 0; }
 
-
+.page-header  { margin-top:60px; }
 
 form .field_with_errors > label, form .field_with_errors .help-block, form .field_with_errors .help-inline {
   color: #b94a48;
@@ -25,4 +26,9 @@ form .field_with_errors .input-prepend .add-on, form .field_with_errors .input-a
   border-color: #b94a48;
 }
 
-.flash .success
+.flash  { width:96%; padding:2%; background-color:#f5f5f5; margin-bottom:20px; }
+
+.error, .alert { background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
+.notice        { background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success       { background: #e6efc2; color: #264409; border-color: #c6d880; }
+.info          { background: #d5edf8; color: #205791; border-color: #92cae4; }

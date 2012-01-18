@@ -21,7 +21,7 @@
                   <% if signed_in? %>
                       <div class="btn small"><%= link_to "Sign Out", signout_path, :method => :delete %></div>
                   <% else %>
-                      <div class="btn small"><%= link_to "Sign in", signin_path %></div>
+                      <div class="btn primary small"><%= link_to "Sign in", signin_path %></div>
                   <% end %>
               </div>
         	</div>

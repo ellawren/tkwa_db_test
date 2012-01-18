@@ -5,3 +5,8 @@
 <strong>Name</strong> <%= @user.name %><br />
 <strong>Email</strong> <%= @user.email %><br />
 <strong>URL</strong>  <%= link_to user_path(@user), @user %>
+<br /><br />
+
+<% if current_user?(@user) %>
+	<%= link_to "Edit User Information", edit_user_path(current_user) %>
+<% end %>

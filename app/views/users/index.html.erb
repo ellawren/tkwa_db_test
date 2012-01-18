@@ -1,0 +1,28 @@
+<h1>All users</h1>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+  	<% @users.each do |user| %>
+      	<tr>
+      		<td><%= user.id %></td>
+      		<td><%= link_to user.name, user %></td>
+      		<td><%= user.email %></td>
+      		<td><% if current_user.admin? %>
+      		<%= link_to "show", user %> &nbsp;
+      		<%= link_to "edit", edit_user_path(user) %> &nbsp;
+  			<%= link_to "delete", user, 	:method => :delete, :confirm => "You sure?",
+                                			:title => "Delete #{user.name}" %>
+            </td>
+  <% end %>
+      	</tr>
+  	<% end %>
+  	</tbody>
+</table>
