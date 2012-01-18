@@ -1,5 +1,9 @@
 body { padding-top: 60px; }
 
+.topbar .nav-buttons  { float:right; margin-top:5px; color:#fff; width:auto; }
+.topbar .nav-buttons .btn a { color:#000; }
+.signed-in-link { float:left; width:auto; margin:5px 20px 0 0; }
+
 
 
 form .field_with_errors > label, form .field_with_errors .help-block, form .field_with_errors .help-inline {

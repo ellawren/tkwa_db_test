@@ -1,8 +1,11 @@
 TkwaDb::Application.routes.draw do
 
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
   match '/signup',      :to => 'users#new'
+  match '/signin',      :to => 'sessions#new'
+  match '/signout',     :to => 'sessions#destroy'
 
   #matches path with action in the pages_controller - here, pages -> projects
   match '/projects',    :to => 'pages#projects'

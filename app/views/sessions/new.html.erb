@@ -1,0 +1,29 @@
+<h1>Sign In</h1>
+
+    <div class="span16">
+        <%= form_for(:session, :url => sessions_path) do |f| %>
+            <fieldset>
+
+                <div class="clearfix">
+                    <%= f.label :email %>
+                    <div class="input">
+                        <%= f.text_field :email, :class => "span5" %>
+                    </div>
+                </div><!-- /clearfix -->
+
+                <div class="clearfix">
+                    <%= f.label :password %>
+                    <div class="input">
+                        <%= f.password_field :password, :class => "span5" %>
+                    </div>
+                </div><!-- /clearfix -->
+
+                <div class="actions">
+                  <%= f.submit "Sign In", :class => "btn primary large"  %>
+                </div>
+
+  				<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  
+        </fieldset>
+      <% end %>
+    </div> <!-- end span16 -->
