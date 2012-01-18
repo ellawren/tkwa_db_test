@@ -12,7 +12,10 @@
 
 	<%= render 'layouts/navbar' %>
     <div class="container">
-
+    	
+    	<% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
 		<%= yield %>
 
     </div> <!-- end container -->

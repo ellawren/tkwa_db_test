@@ -1,1 +1,24 @@
 body { padding-top: 60px; }
+
+
+
+form .field_with_errors > label, form .field_with_errors .help-block, form .field_with_errors .help-inline {
+  color: #b94a48;
+}
+form .field_with_errors input, form .field_with_errors textarea {
+  color: #b94a48;
+  border-color: #ee5f5b;
+}
+form .field_with_errors input:focus, form .field_with_errors textarea:focus {
+  border-color: #e9322d;
+  -webkit-box-shadow: 0 0 6px #f8b9b7;
+  -moz-box-shadow: 0 0 6px #f8b9b7;
+  box-shadow: 0 0 6px #f8b9b7;
+}
+form .field_with_errors .input-prepend .add-on, form .field_with_errors .input-append .add-on {
+  color: #b94a48;
+  background-color: #fce6e6;
+  border-color: #b94a48;
+}
+
+.flash .success

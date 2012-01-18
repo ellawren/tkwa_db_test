@@ -1,2 +1,43 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Sign up</h1>
+
+    <div class="span16">
+        <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages' %>
+            <fieldset>
+                <div class="clearfix">
+                    <%= f.label :name %>
+                    <div class="input">
+                        <%= f.text_field :name, :class => "span5" %>
+                    </div>
+                </div><!-- /clearfix -->
+
+                <div class="clearfix">
+                    <%= f.label :email %>
+                    <div class="input">
+                        <%= f.text_field :email, :class => "span5" %>
+                    </div>
+                </div><!-- /clearfix -->
+
+                <div class="clearfix">
+                    <%= f.label :password %>
+                    <div class="input">
+                        <%= f.password_field :password, :class => "span5" %>
+                    </div>
+                </div><!-- /clearfix -->
+
+                <div class="clearfix">
+                    <%= f.label :password_confirmation %>
+                    <div class="input">
+                        <%= f.password_field :password_confirmation, :class => "span5" %>
+                    </div>
+                </div><!-- /clearfix -->
+
+                <div class="actions">
+                  <%= f.submit "Sign up", :class => "btn primary large"  %>
+                </div>
+
+  
+  
+        </fieldset>
+      <% end %>
+    </div> <!-- end span10 -->
