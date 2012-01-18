@@ -1,13 +1,15 @@
 TkwaDb::Application.routes.draw do
 
-  #get "users/new"
+  resources :users
+
+  match '/signup',      :to => 'users#new'
 
   #matches path with action in the pages_controller - here, pages -> projects
   match '/projects',    :to => 'pages#projects'
   match '/contacts',    :to => 'pages#contacts'
   match '/patterns',    :to => 'pages#patterns'
   match '/timesheets',  :to => 'pages#timesheets'
-  match '/signup',      :to => 'users#new'
+  
 
   root :to => 'pages#home'
 
