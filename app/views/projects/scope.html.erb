@@ -1,0 +1,109 @@
+    
+		<!-- Page title -->
+		<div class="page-header">
+    		<h1><%= @project.name %></h1>
+  		</div>
+  		
+    <%= render 'tabnav' %>  
+  					
+  	<%= semantic_form_for @project do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <%= f.semantic_errors %>
+          
+    <%= f.inputs :class => 'shaded' do %>
+
+  		
+  			<div class="row">	
+  				
+  				<div class="span15 offset1">
+  					<h3>Services Provided</h3>
+
+  					<div class="divider"></div>
+  					<div class="notes">
+						Selected options are included in the total architectural fee. Items not selected are additional services.
+					</div>
+
+					<div class="row form-stacked">	
+
+                    <%= f.input :services, :as => :check_boxes, :collection => Service.find(:all, :limit => 10), :label => false,  :wrapper_html => {:class => 'span4'} %>
+
+                    <%= f.input :services, :as => :check_boxes, :collection => Service.find(:all, :limit => 10, :offset => 10), :label => false,  :wrapper_html => {:class => 'span4 offset1'} %>
+
+                    <%= f.input :services, :as => :check_boxes, :collection => Service.find(:all, :limit => 10, :offset => 20), :label => false,  :wrapper_html => {:class => 'span4 offset1'} %>
+                    
+					</div> <!-- end row -->	
+					
+  				</div> <!-- end span15 -->
+  				  				
+  			</div> <!-- end row -->	
+  			
+  			<br /><br /><br />
+
+  			
+  			<div class="row">	
+  				
+  				<div class="span15 offset1">
+  					<h3>Reimbursables</h3>
+  					<div class="divider"></div>
+  					<div class="notes">
+						Reimbursable expenses are not included in the architectural fee.
+					</div>
+  						
+					
+						<div class="row form-stacked">	
+					
+							
+                        	<%= f.input :reimbursables, :as => :check_boxes, :collection => Reimbursable.find(:all, :limit => 3), :label => false,  :wrapper_html => {:class => 'span4'} %>
+                        	<%= f.input :reimbursables, :as => :check_boxes, :collection => Reimbursable.find(:all, :limit => 3, :offset =>3), :label => false,  :wrapper_html => {:class => 'span4 offset1'} %>
+                        	<%= f.input :reimbursables, :as => :check_boxes, :collection => Reimbursable.find(:all, :limit => 3, :offset =>6), :label => false,  :wrapper_html => {:class => 'span4 offset1'} %>
+                     		
+								  
+								  
+						</div> <!-- end row -->	
+						
+
+								
+  				</div> <!-- end span15 -->
+  				
+  			</div> <!-- end row -->	
+  			
+  			<br /><br /><br />
+  			
+  			<div class="row">	
+  				
+  				<div class="span15 offset1">
+  					<h3>Consultants</h3>
+  					<div class="divider"></div>
+  					<div class="notes">
+
+						Consultants required by the project.
+					</div>
+  						
+					
+						<div class="row form-stacked">	
+					
+							<%= f.input :consultants, :as => :check_boxes, :collection => Consultant.find(:all, :limit => 6), :label => false,  :wrapper_html => {:class => 'span3'} %>
+                        	<%= f.input :consultants, :as => :check_boxes, :collection => Consultant.find(:all, :limit => 6, :offset =>6), :label => false,  :wrapper_html => {:class => 'span3'} %>
+                        	<%= f.input :consultants, :as => :check_boxes, :collection => Consultant.find(:all, :limit => 6, :offset =>12), :label => false,  :wrapper_html => {:class => 'span3'} %>
+                        	<%= f.input :consultants, :as => :check_boxes, :collection => Consultant.find(:all, :limit => 6, :offset =>18), :label => false,  :wrapper_html => {:class => 'span4'} %>
+								  
+								  
+						</div> <!-- end row -->	
+							
+
+					<br /><br /><br /><br />
+					<div class="divider"></div>			
+  				</div> <!-- end span15 -->
+  				
+       
+        </div> <!-- end row --> 
+                
+        <div class="row">
+            <div class="span15 offset1">
+              <br />
+              <%= f.submit @project.new_record? ? "Create" : "Update", :class => "btn primary large span4" %>    
+            </div>
+        </div>
+
+        <% end %> <!-- end fieldset -->
+    <% end %> <!-- end form -->

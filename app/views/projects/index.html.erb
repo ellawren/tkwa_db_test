@@ -1,0 +1,30 @@
+<div class="page-header">
+        <h1>Projects</h1>
+</div>
+<%= link_to "New Project", newproject_path, :class => "btn primary large" %>
+<%= link_to "All Services", services_path %>
+<%= link_to "All Reimbursables", reimbursables_path %>
+<%= link_to "All Consultants", consultants_path %>
+<br /><br />
+<h3>Projects Listing</h3>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Number</th>
+      <th>Name</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.id %></td>
+          <td><%= project.number %></td>
+          <td><%= link_to project.name, project %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+   

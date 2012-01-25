@@ -1,18 +1,52 @@
 TkwaDb::Application.routes.draw do
 
+  resources :consultants
+
+  resources :reimbursables
+
+  get "services/new"
+
+  get "services/edit"
+
+  get "services/index"
+
+  get "services/show"
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+
+  resources :projects
+
+  resources :services
+
+  resources :employees
+
+  resources :projects do
+    member do
+      get 'info', 'team', 'scope'
+    end
+  end
 
   match '/signup',      :to => 'users#new'
   match '/signin',      :to => 'sessions#new'
   match '/signout',     :to => 'sessions#destroy'
 
   #matches path with action in the pages_controller - here, pages -> projects
-  match '/projects',    :to => 'pages#projects'
+  match '/projects',    :to => 'projects#index'
+  match '/team',        :to => 'projects#team'
+
   match '/contacts',    :to => 'pages#contacts'
   match '/patterns',    :to => 'pages#patterns'
   match '/timesheets',  :to => 'pages#timesheets'
-  
+
+  match '/newproject',  :to => 'projects#new'
+  # match '/editproject', :to => 'projects#edit'
+  # match '/showproject', :to => 'projects#show'
+
+  match '/employees',   :to => 'employees#index'
+  # match '/newemployee', :to => 'employees#new'
+  # match '/editemployee', :to => 'employees#edit'
+  # match '/showemployee', :to => 'employees#show'
 
   root :to => 'pages#home'
 

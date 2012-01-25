@@ -1,0 +1,50 @@
+    
+    <!-- Page title -->
+    <div class="page-header">
+        <h1><%= @project.name %></h1>
+      </div>
+      
+    <%= render 'tabnav' %>  
+            
+    <%= semantic_form_for @project do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <%= f.semantic_errors %>
+          
+    <%= f.inputs :class => 'shaded' do %>
+
+      
+        <div class="row"> 
+          
+          <div class="span15 offset1">
+            <h3>Services Provided</h3>
+
+            <div class="divider"></div>
+            <div class="notes">
+            Selected options are included in the total architectural fee. Items not selected are additional services.
+          </div>
+
+          <div class="row form-stacked">  
+
+                   <%= f.input :employees, :as => :select, :input_html => {:class => 'span3'} %>
+
+                   
+
+
+                    
+          </div> <!-- end row --> 
+          
+          </div> <!-- end span15 -->
+                    
+        </div> <!-- end row --> 
+        
+
+                
+        <div class="row">
+            <div class="span15 offset1">
+              <br />
+              <%= f.submit @project.new_record? ? "Create" : "Update", :class => "btn primary large span4" %>    
+            </div>
+        </div>
+
+        <% end %> <!-- end fieldset -->
+    <% end %> <!-- end form -->

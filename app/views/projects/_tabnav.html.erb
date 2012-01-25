@@ -1,0 +1,13 @@
+		  	<div class="tabnav">
+				<%= link_to "info", info_project_path(@project), :class => is_active?("info") %>
+				<%= link_to "team", team_project_path(@project), :class => is_active?("team") %>
+				<%= link_to "scope", scope_project_path(@project), :class => is_active?("scope") %>
+				<a class="" href="tracking.php">tracking</a>
+				<a class="" href="budget.php">budget</a>
+				<a class="" href="billing.php">billing</a>
+				<a class="" href="schedule.php">schedule</a>
+				<a class="" href="shop-drawings.php">shop drawings</a>
+
+				<a class="" href="drawings.php">drawings</a>
+				<a class="" href="consultants.php">consultants</a>		
+			</div>

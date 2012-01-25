@@ -1,0 +1,17 @@
+<h1>
+  <%= @employee.name %>
+</h1>
+
+<strong>Name</strong> <%= @employee.name %><br />
+<strong>Number</strong> <%= @employee.number %><br />
+<br />
+<strong>Projects</strong><br />
+
+<% @project_array.each do |param| %>
+	<%= link_to param.name, param %><br />
+<% end %>
+
+<br />
+<% if signed_in? %>
+	<%= link_to "Edit Employee", edit_employee_path(@employee) %>
+<% end %>

@@ -1,0 +1,125 @@
+		<!-- Page title -->
+		<div class="page-header" style="margin-top:60px;">
+    		<h1><%= @project.name %></h1>
+  		</div>
+  		
+
+  	<%= render 'tabnav' %>				
+
+  	
+	<%= semantic_form_for @project do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <%= f.semantic_errors %>
+          
+    <%= f.inputs :class => 'shaded' do %>
+
+        <div class="row"> 
+          
+          <div class="span15 offset1">
+              <h3>Project Information</h3>
+
+              <div class="divider"></div>
+              <div class="notes">
+
+          </div>
+          
+              <div class="row"> 
+            
+                   <div class="span8">
+          
+                        <div class="clearfix">
+                            <%= f.label :name %>
+                            <div class="input">
+                               <%= f.text_field :name, :class => "span5" %>
+                            </div>
+                        </div><!-- /clearfix -->
+                  
+                      <div class="clearfix">
+                          <%= f.label :location %>
+                          <div class="input">
+                             <%= f.text_area :location, :class => "span5", :rows => 2 %>
+                          </div>
+                      </div><!-- /clearfix -->
+
+                  
+                      <div class="clearfix">
+                          <%= f.label :client %>
+                          <div class="input">
+                             <%= f.text_field :client, :class => "span5" %>
+                          </div>
+                      </div><!-- /clearfix -->
+                  
+                      <div class="clearfix">
+                          <%= f.label :primary_contact %>
+                          <div class="input">
+                             <%= f.text_field :primary_contact, :class => "span3" %>
+                             &nbsp;&nbsp;
+                             <button class="btn">Find Contact</button>
+                          </div>
+                      </div><!-- /clearfix -->
+                  
+                      <div class="clearfix">
+                          <%= f.label :billing_address %>
+                          <div class="input">
+                             <%= f.text_area :billing_address, :class => "span4", :rows => 2 %>
+                          </div>
+                        </div><!-- /clearfix -->
+                  
+                      <div class="clearfix">
+                          <%= f.label :phone %>
+                          <div class="input">
+                             <%= f.text_field :phone, :class => "span2" %>
+                             &nbsp; Extension &nbsp;
+                             <%= f.text_field :extension, :class => "span1" %>
+                          </div>
+                      </div><!-- /clearfix -->
+                  
+                      <div class="clearfix">
+                          <%= f.label :email %>
+                          <div class="input">
+                             <%= f.text_field :email, :class => "span4" %>
+                          </div>
+                      </div><!-- /clearfix -->
+
+                  </div> <!-- end span8 -->
+              
+                  <div class="span6">
+        
+                      <div class="clearfix">
+                          <%= f.label :number %>
+                          <div class="input">
+                             <%= f.text_field :number, :class => "span3" %>
+                          </div>
+                      </div> <!-- /clearfix -->
+
+                      
+                      
+                      <%= f.input :project_type, :as => :select, :collection => 
+                          ["Condos", "Educational", "Financial", "HD Dealership", "Hospitality", "Industrial", "Library", "Maintenance", "Manufacturing", "Medical Elderly", "Medical Clinic", "Medical Hospital", "Mixed Use", "Municipal", "Museum", "Offices", "Performing Arts", "Planning", "Recreation", "Religious", "Residential Single", "Residential Multi", "Retail", "Sustainable Design", "Teaching", "Urban Design"], :selected => @project.project_type,  :input_html => {:class => 'span3'} %>
+
+                      <%= f.input :status, :as => :radio, :collection => ["Potential", "Current", "Completed"] %>
+
+                      
+                      
+
+              </div>
+            
+
+            
+
+          </div> <!-- end span15 -->
+          <br /><br /><br />
+          <div class="divider"></div> 
+          
+        </div> <!-- end row --> 
+                
+        <div class="row">
+            <div class="span15 offset1">
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.submit @project.new_record? ? "Create" : "Update", :class => "btn primary large span4" %>    
+            </div>
+        </div>
+
+        <% end %> <!-- end fieldset -->
+    <% end %> <!-- end form -->
+           

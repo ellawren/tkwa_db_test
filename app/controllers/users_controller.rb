@@ -45,10 +45,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-    @user = User.find(params[:id])
-    @title = @user.name
-  end
 
   def destroy
     User.find(params[:id]).destroy

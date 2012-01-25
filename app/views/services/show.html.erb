@@ -1,0 +1,11 @@
+<h1>
+  <%= @service.name %>
+</h1>
+<strong>#</strong> <%= @service.id %><br />
+<strong>Name</strong> <%= @service.name %><br />
+<br />
+
+<% if signed_in? %>
+	<%= link_to "Edit Service", edit_service_path(@service) %>
+	<%= link_to "All Services", services_path %>
+<% end %>

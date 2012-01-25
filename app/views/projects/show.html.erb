@@ -1,0 +1,51 @@
+<h1>
+  <%= @project.name %>
+</h1>
+
+<strong>Name</strong> <%= @project.name %><br />
+<strong>Number</strong> <%= number_with_precision(@project.number, :precision => 6, :strip_insignificant_zeros => true) %><br />
+<br />
+<strong>Location</strong> <%= @project.location %><br />
+<strong>Client</strong> <%= @project.client %><br />
+<br />
+<strong>Primary Contact</strong> <%= @project.primary_contact %><br />
+<strong>Billing Address</strong> <%= @project.billing_address %><br />
+<strong>Phone</strong> <%= number_to_phone(@project.phone , :area_code => true) %><br />
+<strong>Phone</strong> <%= @project.phone %> <%= @project.extension %><br />
+<strong>Email</strong> <%= @project.email %><br />
+<br />
+<strong>Project Type</strong> <%= @project.project_type %><br />
+<strong>Project Status</strong> <%= @project.status %><br />
+<br />
+<strong>Employees</strong><br />
+
+<% @project.employees.each do |param| %>
+  <%= link_to param.name, param %><br />
+<% end %>
+
+
+
+<br />
+<strong>Services</strong><br />
+<% @project.services.each do |param| %>
+  <%= link_to param.name, param %><br />
+<% end %>
+
+<br />
+<strong>Reimbursables</strong><br />
+<% @project.reimbursables.each do |param| %>
+  <%= link_to param.name, param %><br />
+<% end %>
+
+<br />
+<strong>Consultants</strong><br />
+<% @project.consultants.each do |param| %>
+  <%= link_to param.name, param %><br />
+<% end %>
+
+<br />
+
+<% if signed_in? %>
+	<%= link_to "Edit Project", edit_project_path(@project) %>
+<% end %>
+

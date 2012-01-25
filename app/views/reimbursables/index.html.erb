@@ -1,0 +1,23 @@
+<h1>Listing reimbursables</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reimbursables.each do |reimbursable| %>
+  <tr>
+    <td><%= reimbursable.name %></td>
+    <td><%= link_to 'Show', reimbursable %></td>
+    <td><%= link_to 'Edit', edit_reimbursable_path(reimbursable) %></td>
+    <td><%= link_to 'Destroy', reimbursable, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reimbursable', new_reimbursable_path %>

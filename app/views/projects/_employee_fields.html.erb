@@ -1,0 +1,10 @@
+<div class="fields">
+    <!--<%= f.input :name, :as => :select, :collection => Employee.find(:all), :selected => @project.employees,  :input_html => {:class => 'span3'} %> -->
+    <div class="input">
+		<!--<%= f.text_field :name %> -->
+		<%= f.collection_select(:employee_id, Employee.all, :name, :name, :selected => @project.employees ) %>
+    	<%= f.hidden_field :_destroy %>
+   	 	<%= link_to_remove_fields "remove", f %>
+    </div>
+</div>
+

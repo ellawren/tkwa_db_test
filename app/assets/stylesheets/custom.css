@@ -7,6 +7,10 @@ body { padding-top: 60px; }
 
 .page-header  { margin-top:60px; }
 
+
+
+.shade  { background-color:#f5f5f5;}
+
 form .field_with_errors > label, form .field_with_errors .help-block, form .field_with_errors .help-inline {
   color: #b94a48;
 }
@@ -32,3 +36,38 @@ form .field_with_errors .input-prepend .add-on, form .field_with_errors .input-a
 .notice        { background: #fff6bf; color: #514721; border-color: #ffd324; }
 .success       { background: #e6efc2; color: #264409; border-color: #c6d880; }
 .info          { background: #d5edf8; color: #205791; border-color: #92cae4; }
+
+/* styles added for project page 1/19/12 */
+    .display  { display: inline-block; height: 18px; padding: 5px; font-size: 13px; line-height: 18px; color: #000; font-weight:bold;   border: 1px solid #e6e6e6; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color:#fff; }
+    
+    .display.textarea { height: auto; }
+    
+    .shaded     { background-color:#f5f5f5; padding-top:30px; padding-bottom:30px; }
+    
+    .page-header { margin-bottom:20px; position:relative; border:none;  }
+        
+    .tabnav     { width:100%; border-bottom:1px solid #e6e6e6; padding-bottom:4px; margin-bottom:3px; }
+  .tabnav a   { display:inline-block; width:auto; height:auto; padding:2px 10px 1px 10px; margin-right:3px; position:relative; background-color:#fff; color:#999; }
+  .tabnav a.sel     { background-color:#f5f5f5; color:#000; }
+  .tabnav a:hover { background-color:#f5f5f5; color:#666; }
+  .tabnav a.sel:hover { background-color:#e6e6e6; color:#000; }
+  
+  .textlabel  { height:auto; display:inline-block; font-weight:bold; }
+  
+  .row    { margin-bottom:2px; margin-top:2px; }
+  .divider    { border-bottom:1px solid #b6b6b6; margin:-6px 60px 4px 0px;  }
+  .underline    { border-bottom:1px solid #b6b6b6; margin:4px 0px;  }
+  
+  form .clearfix    { margin-bottom:8px; }
+    select      { height:30px; }
+    
+    .btn.addrole  { width:45px; font-size:14pt; color:#aaa; line-height:16px; }
+    
+    .notes      { color:#b6b6b6; margin-bottom:20px; }
+
+  
+
+  /* styling for dynamic fields in add employee section */
+  .fields { margin-bottom:8px; }
+
+  .offset-left { margin-left:150px; margin-top:10px; }

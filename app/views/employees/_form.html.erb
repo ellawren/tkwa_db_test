@@ -1,0 +1,10 @@
+<%= semantic_form_for @employee do |f| %>
+  <%= f.semantic_errors %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :number %>
+  <% end %>
+  <%= f.buttons do %>
+    <%= f.commit_button @employee.new_record? ? "Create Employee" : "Update Employee", :button_html => {:class => "primary"} %>
+  <% end %>
+<% end %>

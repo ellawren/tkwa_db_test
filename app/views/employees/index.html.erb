@@ -1,0 +1,25 @@
+<div class="page-header">
+        <h1>Employees</h1>
+</div>
+<%= link_to "Add A New Employee", new_employee_path, :class => "btn primary large" %>
+<br /><br />
+<h3>All Employees</h3>
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%= employee.id %></td>
+    <td><%= employee.name %></td>
+    <td><%= link_to 'Show', employee %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <td><%= link_to 'Destroy', employee, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>

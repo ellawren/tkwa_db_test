@@ -1,0 +1,27 @@
+      <%= semantic_form_for @project do |f| %>
+      <%= render 'shared/error_messages', :object => f.object %>
+          
+<%= f.inputs :class => 'shaded' do %>
+
+        <div class="row">
+
+          <%= f.input :name %><br />
+
+          <%= f.input :number %><br />
+          <!--do not mess with this bit, it was damn near impossible to get it working! -->   
+                  <%= f.semantic_fields_for :teams do |builder| %>
+                        <input id="project_employees_none" name="project[employee_ids][]" type="hidden" value="" />
+                        <%= render 'team_fields', :f => builder %>
+                  <% end %>
+                  <%= link_to_add_fields "add employee", f, :teams, "btn offset-left" %>
+           <!-- end, mess away -->
+        </div>
+
+        <%= f.input :employees, :as => :check_boxes %><br />
+
+                <p>
+                <%= f.submit @project.new_record? ? "Create" : "Update", :class => "btn primary large span4" %> 
+                </p>
+
+    <% end %> <!-- end fieldset -->
+<% end %> <!-- end form -->
